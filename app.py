@@ -91,7 +91,8 @@ class FinalOptimizedGamingChartGenerator:
             # Assign data
             self.original_data['FPS'] = fps_numeric
             self.original_data['CPU(%)'] = cpu_numeric
-            self.original_data['TimeMinutes'] = [i / 60 for i in range(len(self.original_data))]
+            self.original_data['TimeMinutes'] = np.arange(len(self.original_data)) / 60
+
             
             # Final validation
             final_fps_max = self.original_data['FPS'].max()
